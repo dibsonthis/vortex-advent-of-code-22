@@ -1,0 +1,38 @@
+import a : "a"
+
+const groups = []
+var group = []
+
+a.rucksacks.forEach((rucksack) => {
+    group.append(rucksack)
+
+    if (group.length() == 3) {
+        groups.append(group)
+        group = []
+    }
+})
+
+const values = groups.map((group) => {
+    var dict = {}
+    var v
+    
+    for (group[0].chars(), index, value) {
+        dict[value] = 1
+    }
+
+    for (group[1].chars(), index, value) {
+        if (dict[value] == 1) {
+            dict[value] = 2
+        }
+    }
+
+    for (group[2].chars(), index, value) {
+        if (dict[value] == 2) {
+            v = value
+        }
+    }
+
+    return a.get_priority(v)
+})
+
+const answer = () => values.reduce((a, b) => a + b)

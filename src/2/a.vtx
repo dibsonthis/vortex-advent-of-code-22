@@ -1,0 +1,66 @@
+import io
+import [] : string
+import [] : functional
+
+const letter_shape_map = {
+    A: "rock",
+    B: "paper",
+    C: "scissors",
+    X: "rock",
+    Y: "paper",
+    Z: "scissors",
+}
+
+const score_map = {
+    rock: 1,
+    paper: 2,
+    scissors: 3
+}
+
+const round_outcome = (enemy_letter, player_letter) => {
+    const shape_enemy = letter_shape_map[enemy_letter]
+    const shape_player = letter_shape_map[player_letter]
+
+    if (shape_enemy == shape_player) {
+        return 3 + score_map[shape_player]
+    }
+
+    if (shape_enemy == "rock") {
+        if (shape_player == "paper") {
+            return 6 + score_map[shape_player]
+        } else {
+            return 0 + score_map[shape_player]
+        }
+    }
+
+    if (shape_enemy == "paper") {
+        if (shape_player == "scissors") {
+            return 6 + score_map[shape_player]
+        } else {
+            return 0 + score_map[shape_player]
+        }
+    }
+
+    if (shape_enemy == "scissors") {
+        if (shape_player == "rock") {
+            return 6 + score_map[shape_player]
+        } else {
+            return 0 + score_map[shape_player]
+        }
+    }
+}
+
+const input = io.readf("input.txt")
+const rounds = input.split("\n")
+
+var total = 0
+
+rounds.forEach((round) => {
+    const round_split = round.split()
+    const enemy_letter = round_split[0].trim()
+    const player_letter = round_split[1].trim()
+    const outcome = round_outcome(enemy_letter, player_letter)
+    total += outcome
+})
+
+const answer = () => total

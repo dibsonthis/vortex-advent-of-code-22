@@ -1,0 +1,54 @@
+import a : "a"
+
+const action_mapping = {
+    X: "lose",
+    Y: "draw",
+    Z: "win"
+}
+
+const input = a.input
+
+const round_outcome = (enemy_letter, player_letter) => {
+    const shape_enemy = a.letter_shape_map[enemy_letter]
+    const player_action = action_mapping[player_letter]
+
+    if (player_action == "win") {
+        if (shape_enemy == "rock") {
+            return a.score_map.paper + 6
+        }
+        if (shape_enemy == "paper") {
+            return a.score_map.scissors + 6
+        }
+        if (shape_enemy == "scissors") {
+            return a.score_map.rock + 6
+        }
+    }
+
+    if (player_action == "draw") {
+        return a.score_map[shape_enemy] + 3
+    }
+
+    if (player_action == "lose") {
+        if (shape_enemy == "rock") {
+            return a.score_map.scissors
+        }
+        if (shape_enemy == "paper") {
+            return a.score_map.rock
+        }
+        if (shape_enemy == "scissors") {
+            return a.score_map.paper
+        }
+    }
+}
+
+var total = 0
+
+a.rounds.forEach((round) => {
+    const round_split = round.split()
+    const enemy_letter = round_split[0].trim()
+    const player_letter = round_split[1].trim()
+    const outcome = round_outcome(enemy_letter, player_letter)
+    total += outcome
+})
+
+const answer = () => total

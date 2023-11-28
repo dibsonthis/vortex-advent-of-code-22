@@ -1,0 +1,3 @@
+import [sorted_totals] : "a"
+
+const answer = () => sorted_totals[0] + sorted_totals[1] + sorted_totals[2]

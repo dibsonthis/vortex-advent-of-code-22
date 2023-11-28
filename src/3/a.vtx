@@ -1,0 +1,40 @@
+import io
+import [] : string
+import [] : functional
+
+const input = io.readf("input.txt")
+
+const rucksacks = input.split("\n")
+
+const alpha = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".chars()
+
+const get_priority = (letter) => alpha.indexOf(letter) + 1
+
+const get_similar_item = (rucksack) => {
+    const length = rucksack.length() / 2
+    const r_chars = rucksack.chars()
+
+    var left_compartment = {
+
+    }
+
+    var similar_item;
+
+    for (r_chars, index, char) {
+        if (index < length) {
+            left_compartment[char] = 1
+        } else {
+            if (left_compartment[char] == 1) {
+                similar_item = char
+            }
+        }
+    }
+
+    return similar_item
+}
+
+var priorities = rucksacks.map((rucksack) => rucksack.get_similar_item().get_priority())
+
+const total = priorities.reduce((a, b) => a + b)
+
+const answer = () => total
