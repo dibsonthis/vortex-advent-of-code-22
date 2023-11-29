@@ -14,7 +14,7 @@ a.rucksacks.forEach((rucksack) => {
 
 const values = groups.map((group) => {
     var dict = {}
-    var v
+    var v;
     
     for (group[0].chars(), index, value) {
         dict[value] = 1

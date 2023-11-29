@@ -14,9 +14,7 @@ const get_similar_item = (rucksack) => {
     const length = rucksack.length() / 2
     const r_chars = rucksack.chars()
 
-    var left_compartment = {
-
-    }
+    var left_compartment = {}
 
     var similar_item;
 
