@@ -1,0 +1,57 @@
+import io
+import [] : string
+import [] : functional
+
+const input = io.readf("input.txt").split("\n")
+
+var dir_map = {}
+var dirs_to_resolve = {}
+var dir_names = []
+var current_dir = ""
+
+for (input, index, line) {
+    if (line.startsWith("$ cd")) {
+        const dir_name = line.split().last()
+        if (dir_name == "..") {
+            dir_names.remove(dir_names.length()-1)
+        } else {
+            dir_names.append(f"${current_dir}_${dir_name}")
+        }
+        current_dir = dir_names.last()
+    } else if (!line.startsWith("$")) {
+        const file_or_dir = line.split()
+        var size = 0
+        if (file_or_dir[0] == "dir") {
+            const dir_name = file_or_dir[1]
+            const dir_size = dir_map[dir_name]
+            if (dirs_to_resolve[current_dir] == None) {
+                dirs_to_resolve[current_dir] = [f"${current_dir}_${dir_name}"]
+            } else {
+                dirs_to_resolve[current_dir].append(f"${current_dir}_${dir_name}")
+            }
+        } else {
+            const file_size = number(file_or_dir[0])
+            size = file_size
+        }
+
+        if (dir_map[current_dir] == None) {
+            dir_map[current_dir] = size
+        } else {
+            dir_map[current_dir] += size
+        }
+    }
+}
+
+var reversed_keys = []
+for (dirs_to_resolve.info().keys, index, key) {
+    reversed_keys.insert(key, 0)
+}
+
+for (reversed_keys, index, key) {
+    const unresolved_dirs = dirs_to_resolve[key]
+    for (unresolved_dirs, i, ud) {
+        dir_map[key] += dir_map[ud]
+    }
+}
+
+const answer = () => dir_map.info().values.filter((v) => v <= 100000).reduce((a, b) => a + b)

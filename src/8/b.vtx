@@ -1,0 +1,7 @@
+import io
+import [] : string
+import [] : functional
+
+const input = io.readf("input.txt")
+
+const answer = () => 1
