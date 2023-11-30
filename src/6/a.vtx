@@ -1,0 +1,30 @@
+import io
+import [] : string
+import [] : functional
+
+const input = io.readf("input.txt")
+
+const find_start_marker = (stream, window_size) => {
+    var window = []
+
+    for (stream.chars(), index, char) {
+
+        if (window.length() % window_size == 0) {
+            window.remove(0)
+        }
+
+        window.append(char)
+
+        var dict = {}
+
+        for (window, i, c) {
+            dict[c] = 1
+        }
+
+        if (dict.info().keys.length() == window_size) {
+            return index + 1
+        }
+    }
+}
+
+const answer = () => find_start_marker(input, 4)

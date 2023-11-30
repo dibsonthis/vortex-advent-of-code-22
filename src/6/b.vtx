@@ -1,0 +1,8 @@
+import io
+import [] : string
+import [] : functional
+import [find_start_marker] : "a"
+
+const input = io.readf("input.txt")
+
+const answer = () => find_start_marker(input, 14)

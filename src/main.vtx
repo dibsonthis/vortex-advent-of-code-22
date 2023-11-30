@@ -8,18 +8,23 @@ import day4_a : "4/a"
 import day4_b : "4/b"
 import day5_a : "5/a"
 import day5_b : "5/b"
+import day6_a : "6/a"
+import day6_b : "6/b"
 
-println("Day 1A: ", day1_a.answer())
-println("Day 1B: ", day1_b.answer())
+// println("Day 1A: ", day1_a.answer())
+// println("Day 1B: ", day1_b.answer())
 
-println("Day 2A: ", day2_a.answer())
-println("Day 2B: ", day2_b.answer())
+// println("Day 2A: ", day2_a.answer())
+// println("Day 2B: ", day2_b.answer())
 
-println("Day 3A: ", day3_a.answer())
-println("Day 3B: ", day3_b.answer())
+// println("Day 3A: ", day3_a.answer())
+// println("Day 3B: ", day3_b.answer())
 
-println("Day 4A: ", day4_a.answer())
-println("Day 4B: ", day4_b.answer())
+// println("Day 4A: ", day4_a.answer())
+// println("Day 4B: ", day4_b.answer())
 
-println("Day 5A: ", day5_a.answer())
-println("Day 5B: ", day5_b.answer())
+// println("Day 5A: ", day5_a.answer())
+// println("Day 5B: ", day5_b.answer())
+
+println("Day 6A: ", day6_a.answer())
+println("Day 6B: ", day6_b.answer())
