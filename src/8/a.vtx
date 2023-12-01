@@ -2,6 +2,55 @@ import io
 import [] : string
 import [] : functional
 
-const input = io.readf("input.txt")
+const input = io.readf("input.txt").split("\n")
 
-const answer = () => 1
+const perimiter = (input.length() * 2) + (input[0].length()-2) * 2
+
+var visible_trees = []
+
+for (1..input.length()-1, i, row) {
+    for (1..input[0].length()-1, j, col) {
+        const num = number(input[row][col])
+        var left_visible = true
+        var right_visible = true
+        var top_visible = true
+        var bottom_visible = true
+
+        for (0..col, col_index) {
+            const curr_num = number(input[row][col_index])
+            if (curr_num >= num) {
+                left_visible = false
+                break
+            }
+        }
+        for ((col+1)..input[0].length(), col_index, col_value) {
+            const curr_num = number(input[row][col_value])
+            if (curr_num >= num) {
+                right_visible = false
+                break
+            }
+        }
+
+        for (0..row, row_index) {
+            const curr_num = number(input[row_index][col])
+            if (curr_num >= num) {
+                top_visible = false
+                break
+            }
+        }
+
+        for ((row+1)..input[0].length(), row_index, row_value) {
+            const curr_num = number(input[row_value][col])
+            if (curr_num >= num) {
+                bottom_visible = false
+                break
+            }
+        }
+
+        if (left_visible or right_visible or top_visible or bottom_visible) {
+            visible_trees.append(num)
+        }
+    }
+}
+
+const answer = () => visible_trees.length() + perimiter

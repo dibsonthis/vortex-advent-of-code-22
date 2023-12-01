@@ -2,6 +2,22 @@ import io
 import [] : string
 import [] : functional
 
-const input = io.readf("input.txt")
+const input = io.readf("input.txt").split("\n")
 
-const answer = () => 1
+for (0..input.length(), i, row) {
+    for (0..input[0].length(), j, col) {
+        const num = number(input[row][col])
+        var trees_up = 0
+        var trees_down = 0
+        var trees_left = 0
+        var trees_right = 0
+
+        if (col != 0) {
+            
+        }
+
+        println(num)
+    }
+}
+
+const answer = () => input

@@ -15,26 +15,26 @@ import day7_b : "7/b"
 import day8_a : "8/a"
 import day8_b : "8/b"
 
-println("Day 1A: ", day1_a.answer())
-println("Day 1B: ", day1_b.answer())
+// println("Day 1A: ", day1_a.answer())
+// println("Day 1B: ", day1_b.answer())
 
-println("Day 2A: ", day2_a.answer())
-println("Day 2B: ", day2_b.answer())
+// println("Day 2A: ", day2_a.answer())
+// println("Day 2B: ", day2_b.answer())
 
-println("Day 3A: ", day3_a.answer())
-println("Day 3B: ", day3_b.answer())
+// println("Day 3A: ", day3_a.answer())
+// println("Day 3B: ", day3_b.answer())
 
-println("Day 4A: ", day4_a.answer())
-println("Day 4B: ", day4_b.answer())
+// println("Day 4A: ", day4_a.answer())
+// println("Day 4B: ", day4_b.answer())
 
-println("Day 5A: ", day5_a.answer())
-println("Day 5B: ", day5_b.answer())
+// println("Day 5A: ", day5_a.answer())
+// println("Day 5B: ", day5_b.answer())
 
-println("Day 6A: ", day6_a.answer())
-println("Day 6B: ", day6_b.answer())
+// println("Day 6A: ", day6_a.answer())
+// println("Day 6B: ", day6_b.answer())
 
-println("Day 7A: ", day7_a.answer())
-println("Day 7B: ", day7_b.answer())
+// println("Day 7A: ", day7_a.answer())
+// println("Day 7B: ", day7_b.answer())
 
-println("Day 8A: ", day8_a.answer())
+// println("Day 8A: ", day8_a.answer())
 println("Day 8B: ", day8_b.answer())
